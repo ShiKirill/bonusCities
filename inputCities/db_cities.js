@@ -302,13 +302,6 @@ const button = document.querySelector('.button');
 const allDropdowns = document.querySelectorAll('.dropdown-lists__list');
 const label = document.querySelector('.label');
 
-const getData = ()=>{
-    fetch('db_cities.json').then((response)=>{
-        console.log(response);
-    });
-}
-getData();
-
 
     const disableButton = (event) => {
         event.preventDefault(); 

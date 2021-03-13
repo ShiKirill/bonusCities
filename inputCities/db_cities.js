@@ -1,297 +1,4 @@
 'use strict';
-const data = {
-    "RU": [
-        {
-            "country": "Россия",
-            "count": "144500000",
-            "cities": [
-                {
-                    "name": "Рязань",
-                    "count": "538962",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%8C"
-                },
-                {
-                    "name": "Москва",
-                    "count": "12615882",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"
-                },
-                {
-                    "name": "Санкт-Петербург",
-                    "count": "5383968",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3"
-                },
-                {
-                    "name": "Краснодар",
-                    "count": "918145",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80"
-                },
-                {
-                    "name": "Екатеринбург",
-                    "count": "1484456",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3"
-                },
-                {
-                    "name": "Ростов-на-Дону",
-                    "count": "1130305",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83"
-                },
-                {
-                    "name": "Воронеж",
-                    "count": "1054537",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%B5%D0%B6"
-                }
-            ]
-
-        },
-        {
-            "country": "Германия",
-            "count": 82175684,
-            "cities": [
-                {
-                    "name": "Берлин",
-                    "count": "3613495",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%BB%D0%B8%D0%BD"
-                },
-                {
-                    "name": "Мюнхен",
-                    "count": "1456039",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9C%D1%8E%D0%BD%D1%85%D0%B5%D0%BD"
-                },
-                {
-                    "name": "Франкфурт-на-Майне",
-                    "count": "736414",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D1%84%D1%83%D1%80%D1%82-%D0%BD%D0%B0-%D0%9C%D0%B0%D0%B9%D0%BD%D0%B5"
-                },
-                {
-                    "name": "Кёльн",
-                    "count": "1080394",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9A%D1%91%D0%BB%D1%8C%D0%BD"
-                }
-            ]
-        },
-        {
-            "country": "Англия",
-            "count": 53012456,
-            "cities": [
-                {
-                    "name": "Лондон",
-                    "count": " 8869898",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD"
-                },
-                {
-                    "name": "Манчестер",
-                    "count": "545500",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BD%D1%87%D0%B5%D1%81%D1%82%D0%B5%D1%80"
-                },
-                {
-                    "name": "Эдинбург",
-                    "count": "488100",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%AD%D0%B4%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3"
-                },
-                {
-                    "name": "Бристоль",
-                    "count": "567111",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%BB%D1%8C"
-                }
-            ]
-
-        }
-    ],
-    "EN": [
-        {
-            "country": "Russia",
-            "count": "144500000",
-            "cities": [
-                {
-                    "name": "Ryazan",
-                    "count": "538962",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%8C"
-                },
-                {
-                    "name": "Moscow",
-                    "count": "12615882",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"
-                },
-                {
-                    "name": "St Petersburg",
-                    "count": "5383968",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3"
-                },
-                {
-                    "name": "Krasnodar",
-                    "count": "918145",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80"
-                },
-                {
-                    "name": "Yekaterinburg",
-                    "count": "1484456",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3"
-                },
-                {
-                    "name": "Rostov-on-Don",
-                    "count": "1130305",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83"
-                },
-                {
-                    "name": "Voronezh",
-                    "count": "1054537",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%B5%D0%B6"
-                }
-            ]
-
-        },
-        {
-            "country": "Germany",
-            "count": 82175684,
-            "cities": [
-                {
-                    "name": "Berlin",
-                    "count": "3613495",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%BB%D0%B8%D0%BD"
-                },
-                {
-                    "name": "Munich",
-                    "count": "1456039",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9C%D1%8E%D0%BD%D1%85%D0%B5%D0%BD"
-                },
-                {
-                    "name": "frankfurt",
-                    "count": "736414",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D1%84%D1%83%D1%80%D1%82-%D0%BD%D0%B0-%D0%9C%D0%B0%D0%B9%D0%BD%D0%B5"
-                },
-                {
-                    "name": "Cologne",
-                    "count": "1080394",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9A%D1%91%D0%BB%D1%8C%D0%BD"
-                }
-            ]
-        },
-        {
-            "country": "United Kingdom",
-            "count": 53012456,
-            "cities": [
-                {
-                    "name": "London",
-                    "count": " 8869898",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD"
-                },
-                {
-                    "name": "Manchester",
-                    "count": "545500",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BD%D1%87%D0%B5%D1%81%D1%82%D0%B5%D1%80"
-                },
-                {
-                    "name": "Edinburgh",
-                    "count": "488100",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%AD%D0%B4%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3"
-                },
-                {
-                    "name": "Bristol",
-                    "count": "567111",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%BB%D1%8C"
-                }
-            ]
-
-        }
-    ],
-    "DE": [
-        {
-            "country": "Russland",
-            "count": "144500000",
-            "cities": [
-                {
-                    "name": "Ryazan",
-                    "count": "538962",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%8C"
-                },
-                {
-                    "name": "Moskau",
-                    "count": "12615882",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"
-                },
-                {
-                    "name": "Saint Petersburg",
-                    "count": "5383968",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3"
-                },
-                {
-                    "name": "Krasnodar",
-                    "count": "918145",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80"
-                },
-                {
-                    "name": "Jekaterinburg",
-                    "count": "1484456",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3"
-                },
-                {
-                    "name": "Rostow",
-                    "count": "1130305",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83"
-                },
-                {
-                    "name": "Woronesch",
-                    "count": "1054537",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%B5%D0%B6"
-                }
-            ]
-
-        },
-        {
-            "country": "Deutschland",
-            "count": 82175684,
-            "cities": [
-                {
-                    "name": "Berlin",
-                    "count": "3613495",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%BB%D0%B8%D0%BD"
-                },
-                {
-                    "name": "München",
-                    "count": "1456039",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9C%D1%8E%D0%BD%D1%85%D0%B5%D0%BD"
-                },
-                {
-                    "name": "Frankfurt",
-                    "count": "736414",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D0%BA%D1%84%D1%83%D1%80%D1%82-%D0%BD%D0%B0-%D0%9C%D0%B0%D0%B9%D0%BD%D0%B5"
-                },
-                {
-                    "name": "Köln",
-                    "count": "1080394",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9A%D1%91%D0%BB%D1%8C%D0%BD"
-                }
-            ]
-        },
-        {
-            "country": "England",
-            "count": 53012456,
-            "cities": [
-                {
-                    "name": "London",
-                    "count": " 8869898",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD"
-                },
-                {
-                    "name": "Manchester",
-                    "count": "545500",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BD%D1%87%D0%B5%D1%81%D1%82%D0%B5%D1%80"
-                },
-                {
-                    "name": "Edinburgh",
-                    "count": "488100",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%AD%D0%B4%D0%B8%D0%BD%D0%B1%D1%83%D1%80%D0%B3"
-                },
-                {
-                    "name": "Bristol",
-                    "count": "567111",
-                    "link": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%BB%D1%8C"
-                }
-            ]
-
-        }
-    ]
-};
 
 const input = document.getElementById('select-cities');
 const dropdownDefault = document.querySelector('.dropdown-lists__list--default');
@@ -303,6 +10,7 @@ const button = document.querySelector('.button');
 const allDropdowns = document.querySelectorAll('.dropdown-lists__list');
 const dropdownBlock = document.querySelector('.dropdown');
 const label = document.querySelector('.label');
+let language = '';
 
 document.querySelector('.input-cities').style.opacity = 0;
 
@@ -444,10 +152,10 @@ const disableButton = (event) => {
 const disableDropdowns = () => {
     let start = 0;
     let step;
-    if (Math.random()>0.5){
-        step = window.innerWidth*0.08;
+    if (Math.random() > 0.5) {
+        step = window.innerWidth * 0.08;
     } else {
-        step = -window.innerWidth*0.08;
+        step = -window.innerWidth * 0.08;
     }
     allDropdowns.forEach(item => {
         ;
@@ -472,7 +180,7 @@ const disableDropdowns = () => {
     })
 
 };
-const createList = (countryName, countryCount, cities) => {
+const createList = (countryName, countryCount, cities, lang) => {
     let citiesList = '';
     cities.forEach(item => {
         citiesList += `
@@ -494,9 +202,43 @@ const createList = (countryName, countryCount, cities) => {
         `;
     return list;
 };
-const createDefaultList = (data) => {
-    data["RU"].forEach(item => {
-        dropdownDefault.querySelector('.dropdown-lists__col').innerHTML += createList(item.country, item.count, item.cities);
+const createDefaultList = (data, lang) => {
+    let firstItem = '';
+    let otherItems = '';
+    data[lang].forEach((item, index) => {
+        console.log();
+        if (lang === "RU") {
+            if (+item.count === 144500000) {
+                firstItem = createList(item.country, item.count, item.cities, lang);
+            } else {
+                otherItems += createList(item.country, item.count, item.cities, lang);
+            }
+            if (index === data[lang].length - 1) {
+                dropdownDefault.querySelector('.dropdown-lists__col').innerHTML = firstItem + otherItems;
+            }
+        } else if (lang === "EN") {
+            console.log(item.count);
+            if (+item.count === 53012456) {
+                console.log(12345);
+                firstItem = createList(item.country, item.count, item.cities, lang);
+            } else {
+                otherItems += createList(item.country, item.count, item.cities, lang);
+            }
+            if (index === data[lang].length - 1) {
+                dropdownDefault.querySelector('.dropdown-lists__col').innerHTML = firstItem + otherItems;
+            }
+        } else {
+            if (+item.count === 82175684) {
+                firstItem = createList(item.country, item.count, item.cities, lang);
+            } else {
+                otherItems += createList(item.country, item.count, item.cities, lang);
+            }
+            if (index === data[lang].length - 1) {
+                console.log(firstItem);
+                dropdownDefault.querySelector('.dropdown-lists__col').innerHTML = firstItem + otherItems;
+            }
+        }
+        
         totalLine = document.querySelectorAll('.dropdown-lists__total-line');
     });
 }
@@ -525,7 +267,7 @@ const eventListeners = (data) => {
         } else {
             dropdownAutocomplete.style.display = 'block';
             let overlaps = ``;
-            data["RU"].forEach(item => {
+            data[lang].forEach(item => {
                 item.cities.forEach(item => {
                     if (item.name.toLowerCase().startsWith(input.value.toLowerCase().trim())) {
                         overlaps += `
@@ -576,7 +318,7 @@ const eventListeners = (data) => {
             label.style.opacity = 0;
 
             if (target.classList.contains('dropdown-lists__city')) {
-                data["RU"].forEach(item => {
+                data[language].forEach(item => {
                     item.cities.forEach(item => {
                         if (item.name === target.textContent) {
                             button.style.cssText = '';
@@ -585,6 +327,10 @@ const eventListeners = (data) => {
                         }
                     });
                 });
+            } else if (target.classList.contains('dropdown-lists__country')) {
+                button.addEventListener('click', disableButton);
+                button.href = '#';
+                button.style.cssText = 'cursor:context-menu; background: #00416A;';
             }
             closeBtn.style.display = 'block';
             input.value = target.textContent;
@@ -602,8 +348,48 @@ const eventListeners = (data) => {
     });
 }
 
+const setLanguage = () => {
+    if (getCookie('language') !== undefined) {
+        language = getCookie('language');
+        if (language === 'EN') {
+            label.textContent = 'Country or city';
+        } else if (language === 'DE') {
+            label.textContent = 'Land oder stadt';
+        } else {
+            label.textContent = 'Страна или город';
+        }
+    } else {
+        let check = true;
+        do {
+            language = prompt('Выбериите язык (ru, en, de):').trim().toUpperCase();
+            if (language === 'RU' || language === 'EN' || language === 'DE') {
+                if (language === 'EN') {
+                    label.textContent = 'Country or city';
+                } else if (language === 'DE') {
+                    label.textContent = 'Land oder stadt';
+                } else {
+                    label.textContent = 'Страна или город';
+                }
+                check = false;
+                document.cookie = `language = ${language}`;
+            }
+        } while (check);
+    }
+
+};
 
 
+const uploadStorage = (data) => {
+    const json = JSON.stringify(data);
+    localStorage.data = json;
+}
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
 
 const getData = () => {
     fetch('db_cities.json').then((response) => {
@@ -614,13 +400,29 @@ const getData = () => {
         return (response.json());
         ;
     }).then((response) => {
-        setTimeout(() => {
-            document.head.removeChild(style);
-            document.querySelector('.loading').parentNode.removeChild(document.querySelector('.loading'));
-            document.querySelector('.input-cities').style.opacity = 1;
-            createDefaultList(response);
-            eventListeners(response);
-        }, 2000);
+        document.head.removeChild(style);
+        document.querySelector('.loading').parentNode.removeChild(document.querySelector('.loading'));
+        document.querySelector('.input-cities').style.opacity = 1;
+        setLanguage();
+        uploadStorage(response);
+        createDefaultList(response, language);
+        eventListeners(response);
     }).catch(error => console.error(error));
 }
-getData();
+
+
+if (localStorage.data !== undefined) {
+    document.head.appendChild(style);
+    const data = JSON.parse(localStorage.data);
+    setTimeout(() => {
+        setLanguage();
+        document.head.removeChild(style);
+        document.querySelector('.loading').parentNode.removeChild(document.querySelector('.loading'));
+        document.querySelector('.input-cities').style.opacity = 1;
+        createDefaultList(data, language);
+        eventListeners(data);
+    }, 2000);
+} else {
+    getData();
+}
+
